@@ -265,6 +265,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ============ AOS ============ */
+  if (window.AOS) {
+    AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
+  }
+
+  /* ============ Header scroll state ============ */
   const header = document.getElementById('site-header');
   const onScroll = () => {
     if (window.scrollY > 40) header.classList.add('scrolled');
