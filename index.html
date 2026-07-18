@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ever After Events — Organisation de mariages traditionnels, civils &amp; réceptions</title>
+<meta name="description" content="Ever After Events conçoit et orchestre vos mariages traditionnels, civils et réceptions avec exigence, élégance et sens du détail.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- RemixIcon -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Tailwind (CDN, no build step) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#0E2A22',
+          ink2: '#123527',
+          gold: '#C9A24D',
+          goldLight: '#E4C87A',
+          ivory: '#FAF6EC',
+          wine: '#6E1F30',
+          sand: '#E7DCC2',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Work Sans', 'sans-serif'],
+          signature: ['Caveat', 'cursive'],
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body bg-ivory text-ink antialiased">
+
+<!-- ================= HEADER ================= -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between py-5">
+    <a href="#hero" class="flex items-center gap-3 group">
+      <span class="seal seal-sm shrink-0">
+        <svg viewBox="0 0 60 60" class="w-full h-full">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/>
+          <text x="30" y="37" text-anchor="middle" font-family="Fraunces, serif" font-size="18" fill="currentColor">EAE</text>
+        </svg>
+      </span>
+      <span class="font-display text-lg md:text-xl tracking-wide leading-none header-brand">
+        Ever After <em class="not-italic text-gold">Events</em>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9 header-nav">
+      <a href="#apropos" class="nav-link">À propos</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#devis" class="nav-link">Simulateur</a>
+      <a href="#galerie" class="nav-link">Galerie</a>
+      <a href="#avis" class="nav-link">Avis</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="btn-gold-outline">Nous contacter</a>
+    </nav>
+
+    <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false" class="lg:hidden relative z-50 w-9 h-9 flex flex-col justify-center items-center gap-[5px] header-nav">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out bg-ink">
+    <nav class="flex flex-col px-8 pb-8 pt-2 gap-1 font-display text-xl text-sand">
+      <a href="#apropos" class="mobile-link">À propos</a>
+      <a href="#services" class="mobile-link">Services</a>
+      <a href="#devis" class="mobile-link">Simulateur de devis</a>
+      <a href="#galerie" class="mobile-link">Galerie</a>
+      <a href="#avis" class="mobile-link">Avis clients</a>
+      <a href="#faq" class="mobile-link">FAQ</a>
+      <a href="#contact" class="mobile-link text-gold">Nous contacter →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="relative min-h-[100svh] flex items-end md:items-center overflow-hidden bg-ink">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1695281536457-01f9a07c575b?auto=format&fit=crop&w=1800&q=80"
+         alt="Couple de mariés s'enlaçant" class="w-full h-full object-cover object-[50%_20%]" />
+    <div class="absolute inset-0 hero-gradient"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 md:px-10 pb-16 pt-40 md:py-0 w-full">
+    <p data-aos="fade-up" class="font-signature text-3xl md:text-4xl text-gold mb-2">Le premier chapitre de votre "pour toujours"</p>
+    <h1 data-aos="fade-up" data-aos-delay="100" class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-ivory max-w-3xl">
+      Des cérémonies <em class="text-gold not-italic font-medium">scellées</em><br class="hidden md:block"> avec exigence, célébrées avec cœur.
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="mt-6 text-sand/90 max-w-xl text-base md:text-lg">
+      Ever After Events conçoit vos mariages traditionnels, civils et réceptions : du choix du protocole à la dernière danse, chaque détail est pensé, écrit et signé avec vous.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="300" class="mt-9 flex flex-wrap gap-4">
+      <a href="#contact" class="btn-gold">Planifier mon mariage</a>
+      <a href="#galerie" class="btn-ghost">Voir nos réalisations</a>
+    </div>
+  </div>
+
+  <a href="#apropos" class="hidden md:flex scroll-cue absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-sand/80">
+    <span class="text-xs tracking-[0.25em] uppercase">Découvrir</span>
+    <span class="w-px h-10 bg-sand/50 relative overflow-hidden"><span class="scroll-cue-line"></span></span>
+  </a>
+</section>
+
+<!-- ================= À PROPOS ================= -->
+<section id="apropos" class="py-24 md:py-32 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+
+    <div data-aos="fade-right" class="relative">
+      <div class="relative rounded-[2px] overflow-hidden shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1661332517932-2d441bfb2994?auto=format&fit=crop&w=1000&q=80"
+             alt="Couple en tenue traditionnelle" class="w-full h-[420px] md:h-[520px] object-cover" />
+      </div>
+      <div class="absolute -bottom-8 -right-6 md:-right-10 bg-ink text-ivory rounded-[2px] shadow-xl px-7 py-6 w-52 md:w-60">
+        <span class="seal seal-sm text-gold mb-2 inline-block"><svg viewBox="0 0 60 60" class="w-full h-full"><circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/></svg></span>
+        <p class="font-display text-3xl text-gold leading-none counter" data-target="180">0</p>
+        <p class="text-xs tracking-wide text-sand/80 mt-1">unions célébrées &amp; signées</p>
+      </div>
+    </div>
+
+    <div data-aos="fade-left">
+      <p class="eyebrow">À propos d'Ever After Events</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3 leading-tight">
+        Nous ne planifions pas des évènements. <span class="text-wine italic">Nous mettons en scène des serments.</span>
+      </h2>
+      <p class="mt-6 text-ink/80 leading-relaxed">
+        Depuis nos débuts, notre agence accompagne les couples à travers les trois temps forts d'une union : la dot et les rites traditionnels, la signature à la mairie, puis la réception qui rassemble les deux familles. Nous connaissons les codes de chaque cérémonie — et surtout, nous savons les faire dialoguer entre eux sans rien perdre de leur sens.
+      </p>
+      <p class="mt-4 text-ink/80 leading-relaxed">
+        Notre équipe de coordinateurs, décorateurs et maîtres de cérémonie travaille en atelier avec vous, comme un tailleur reprend un patron : sur mesure, jamais sur catalogue.
+      </p>
+
+      <div class="grid grid-cols-3 gap-4 mt-10 border-t border-ink/10 pt-8">
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-wine counter" data-target="12">0</p>
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-wide">ans d'expérience</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-wine"><span class="counter" data-target="98">0</span>%</p>
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-wide">clients satisfaits</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-wine counter" data-target="40">0</p>
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-wide">partenaires &amp; prestataires</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><span class="seal seal-sm text-gold"><svg viewBox="0 0 60 60" class="w-full h-full"><circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/></svg></span></div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="py-24 md:py-32 bg-ink text-ivory relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 relative">
+    <div class="max-w-2xl mx-auto text-center" data-aos="fade-up">
+      <p class="eyebrow text-gold justify-center">Nos services</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Trois cérémonies, une seule promesse</h2>
+      <p class="mt-4 text-sand/80">Chaque type d'union a son protocole, sa symbolique et son tempo. Nous les orchestrons séparément — ou ensemble, sur un même week-end.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-16">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="ri-hand-heart-line"></i>
+        <h3>Mariage Traditionnel</h3>
+        <p>Dot, rites coutumiers, tenues et symboles honorés à la lettre — organisés avec les familles, dans le respect des usages de chaque région.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="ri-quill-pen-line"></i>
+        <h3>Mariage Civil</h3>
+        <p>De la constitution du dossier à la cérémonie à la mairie : coordination des témoins, du protocole officiel et du registre, sans stress le jour J.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="ri-goblet-line"></i>
+        <h3>Réception &amp; Autres célébrations</h3>
+        <p>Décoration, traiteur, animation, photo/vidéo : la fête qui suit les serments, pensée comme un spectacle vivant pour vos invités.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="ri-route-line"></i>
+        <h3>Wedding Planning complet</h3>
+        <p>Un coordinateur unique du premier rendez-vous au dernier remerciement, pour les couples qui veulent tout confier en toute confiance.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="ri-palette-line"></i>
+        <h3>Décoration &amp; Scénographie</h3>
+        <p>Direction artistique sur mesure : palettes, textiles, fleurs et lumière assemblés pour raconter votre histoire en un coup d'œil.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="ri-camera-3-line"></i>
+        <h3>Photo &amp; Souvenirs</h3>
+        <p>Une équipe photo/vidéo qui capture aussi bien la gravité d'une signature que l'euphorie d'une piste de danse.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SIMULATEUR DE DEVIS ================= -->
+<section id="devis" class="py-24 md:py-32 bg-ivory">
+  <div class="max-w-6xl mx-auto px-5 md:px-10">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="eyebrow">Simulateur</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Estimez le budget de votre grand jour</h2>
+      <p class="mt-4 text-ink/70">Ajustez les curseurs : nous vous donnons une fourchette indicative en quelques secondes. Un devis précis et personnalisé suit toujours un vrai échange avec notre équipe.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-5 gap-0 rounded-[2px] overflow-hidden shadow-2xl" data-aos="fade-up">
+      <!-- controls -->
+      <div class="lg:col-span-3 bg-white p-8 md:p-12">
+
+        <div class="mb-9">
+          <p class="form-label">Type de cérémonie</p>
+          <div class="grid grid-cols-3 gap-3" id="type-group">
+            <button type="button" class="type-btn active" data-value="1.0" data-label="Traditionnel">Traditionnel</button>
+            <button type="button" class="type-btn" data-value="0.85" data-label="Civil">Civil</button>
+            <button type="button" class="type-btn" data-value="1.2" data-label="Traditionnel + Réception">Complet</button>
+          </div>
+        </div>
+
+        <div class="mb-9">
+          <div class="flex justify-between items-baseline mb-2">
+            <p class="form-label !mb-0">Nombre d'invités</p>
+            <span class="font-display text-xl text-wine"><span id="guests-value">150</span> pers.</span>
+          </div>
+          <input type="range" id="guests" min="30" max="800" step="10" value="150" class="w-full range-gold">
+          <div class="flex justify-between text-xs text-ink/40 mt-1"><span>30</span><span>800</span></div>
+        </div>
+
+        <div class="mb-2">
+          <p class="form-label">Options incluses</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="option-check"><input type="checkbox" value="1800000" checked> <span>Décoration &amp; scénographie</span></label>
+            <label class="option-check"><input type="checkbox" value="2500000" checked> <span>Traiteur complet</span></label>
+            <label class="option-check"><input type="checkbox" value="900000"> <span>Photo &amp; vidéo</span></label>
+            <label class="option-check"><input type="checkbox" value="1100000"> <span>Animation / orchestre</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- result -->
+      <div class="lg:col-span-2 bg-ink text-ivory p-8 md:p-12 flex flex-col justify-center">
+        <p class="text-xs tracking-[0.25em] uppercase text-gold">Estimation indicative</p>
+        <p class="font-display text-3xl md:text-4xl mt-3 leading-tight">
+          <span id="price-low">—</span> <br class="sm:hidden">–<span id="price-high">—</span>
+        </p>
+        <p class="text-sand/70 text-sm mt-1">FCFA, hors imprévus &amp; taxes locales</p>
+        <div class="h-px bg-sand/20 my-6"></div>
+        <p class="text-sand/80 text-sm leading-relaxed">Cette fourchette évolue selon le nombre d'invités, le type de cérémonie et les options choisies. Recevez un devis détaillé et gratuit sous 48h.</p>
+        <a href="#contact" class="btn-gold mt-7 text-center">Demander mon devis précis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIE ================= -->
+<section id="galerie" class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-aos="fade-up">
+      <div class="max-w-xl">
+        <p class="eyebrow">Galerie</p>
+        <h2 class="font-display text-3xl md:text-4xl mt-3">Des cérémonies, en images</h2>
+      </div>
+      <div class="flex flex-wrap gap-2" id="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="tradi">Traditionnel</button>
+        <button class="filter-btn" data-filter="civil">Civil</button>
+        <button class="filter-btn" data-filter="autre">Réceptions</button>
+      </div>
+    </div>
+
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-12">
+      <div class="gallery-item" data-cat="tradi" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1618999114008-fbf937170cdb?auto=format&fit=crop&w=800&q=80" alt="Mariée en robe traditionnelle rouge et or">
+      </div>
+      <div class="gallery-item" data-cat="civil" data-aos="fade-up" data-aos-delay="50">
+        <img src="https://images.unsplash.com/photo-1507650029083-5092f9b2b2e6?auto=format&fit=crop&w=800&q=80" alt="Passage de l'alliance">
+      </div>
+      <div class="gallery-item" data-cat="autre" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1617813437449-c4f8f233dcd6?auto=format&fit=crop&w=800&q=80" alt="Décoration florale de réception">
+      </div>
+      <div class="gallery-item" data-cat="tradi" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1665258918932-9e358bcfba0f?auto=format&fit=crop&w=800&q=80" alt="Couple en tenue traditionnelle">
+      </div>
+      <div class="gallery-item" data-cat="civil" data-aos="fade-up" data-aos-delay="50">
+        <img src="https://images.unsplash.com/photo-1608009232260-9b527a5bb9bd?auto=format&fit=crop&w=800&q=80" alt="Mariage civil, costume et robe blanche">
+      </div>
+      <div class="gallery-item" data-cat="autre" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1705459965544-fcc7ead92d58?auto=format&fit=crop&w=800&q=80" alt="Arrivée des mariés en voiture">
+      </div>
+      <div class="gallery-item" data-cat="tradi" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1662432911640-9a7af63bbe4c?auto=format&fit=crop&w=800&q=80" alt="Tenue traditionnelle raffinée">
+      </div>
+      <div class="gallery-item" data-cat="civil" data-aos="fade-up" data-aos-delay="50">
+        <img src="https://images.unsplash.com/photo-1529519195486-16945f0fb37f?auto=format&fit=crop&w=800&q=80" alt="Couple se tenant la main">
+      </div>
+      <div class="gallery-item" data-cat="autre" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1633150747731-c945ec51b663?auto=format&fit=crop&w=800&q=80" alt="Séance photo de mariés">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[80] hidden items-center justify-center bg-ink/95 p-6">
+  <button id="lightbox-close" aria-label="Fermer" class="absolute top-6 right-6 text-ivory text-3xl leading-none"><i class="ri-close-line"></i></button>
+  <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-full object-contain rounded-[2px]">
+</div>
+
+<!-- ================= AVIS CLIENTS ================= -->
+<section id="avis" class="py-24 md:py-32 bg-ivory overflow-hidden">
+  <div class="max-w-4xl mx-auto px-5 md:px-10 text-center" data-aos="fade-up">
+    <p class="eyebrow justify-center">Avis clients</p>
+    <h2 class="font-display text-3xl md:text-4xl mt-3">Ce que disent nos couples</h2>
+  </div>
+
+  <div class="max-w-3xl mx-auto mt-14 px-5 relative" data-aos="fade-up">
+    <div id="testi-track" class="testi-track">
+
+      <article class="testi-card">
+        <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+        <p class="font-display text-xl md:text-2xl leading-snug text-ink/90">« Notre dot s'est déroulée exactement comme nos parents l'espéraient, et la réception qui a suivi ressemblait à nous. Ever After a tenu les deux mondes ensemble. »</p>
+        <p class="font-signature text-2xl text-wine mt-6">Chimène &amp; Ludovic</p>
+        <p class="text-xs text-ink/50 uppercase tracking-wide">Mariage traditionnel &amp; réception — Cotonou</p>
+      </article>
+
+      <article class="testi-card">
+        <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+        <p class="font-display text-xl md:text-2xl leading-snug text-ink/90">« La coordinatrice a géré les documents, les témoins, le timing à la mairie — nous n'avons eu qu'à signer et sourire. »</p>
+        <p class="font-signature text-2xl text-wine mt-6">Adjoa &amp; Steve</p>
+        <p class="text-xs text-ink/50 uppercase tracking-wide">Mariage civil — Porto-Novo</p>
+      </article>
+
+      <article class="testi-card">
+        <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+        <p class="font-display text-xl md:text-2xl leading-snug text-ink/90">« Le simulateur de devis nous a évité bien des surprises, et l'équipe a respecté le budget annoncé au FCFA près. »</p>
+        <p class="font-signature text-2xl text-wine mt-6">Rachida &amp; Emmanuel</p>
+        <p class="text-xs text-ink/50 uppercase tracking-wide">Réception — Abomey-Calavi</p>
+      </article>
+
+    </div>
+
+    <div class="flex items-center justify-center gap-6 mt-10">
+      <button id="testi-prev" class="testi-nav" aria-label="Avis précédent"><i class="ri-arrow-left-line"></i></button>
+      <div id="testi-dots" class="flex gap-2"></div>
+      <button id="testi-next" class="testi-nav" aria-label="Avis suivant"><i class="ri-arrow-right-line"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-24 md:py-32 bg-white">
+  <div class="max-w-3xl mx-auto px-5 md:px-10">
+    <div class="text-center" data-aos="fade-up">
+      <p class="eyebrow justify-center">Questions fréquentes</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Avant de nous écrire</h2>
+    </div>
+
+    <div class="mt-12 divide-y divide-ink/10 border-y border-ink/10" id="faq-list">
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Combien de temps avant la date faut-il vous contacter ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Idéalement 6 à 9 mois avant pour une cérémonie complète (traditionnel + civil + réception), et 2 mois minimum pour une prestation simple. Les dates de forte saison (décembre, juillet-août) partent vite.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Organisez-vous uniquement la dot ou uniquement le civil ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Oui, chaque cérémonie peut être réservée séparément. Beaucoup de couples nous confient d'abord la dot, puis reviennent pour la réception une fois rassurés.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Le simulateur de devis est-il un engagement ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Non, c'est une estimation indicative gratuite et sans engagement. Le devis final est établi après un échange avec votre coordinateur dédié.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Travaillez-vous avec nos propres prestataires (traiteur, DJ...) ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Tout à fait. Nous pouvons coordonner vos prestataires de confiance ou vous recommander ceux de notre réseau, selon vos préférences et votre budget.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Proposez-vous un jour de coordination seule, sans planification complète ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Oui, notre formule "Jour J" prend le relais 48h avant l'événement pour que vous n'ayez plus rien à gérer vous-même le jour de la cérémonie.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-24 md:py-32 bg-ink text-ivory relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid lg:grid-cols-5 gap-14">
+
+    <div class="lg:col-span-2" data-aos="fade-right">
+      <p class="eyebrow text-gold">Contact</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Racontez-nous votre histoire</h2>
+      <p class="mt-5 text-sand/80 leading-relaxed">Un mot, une date, une envie encore floue : c'est suffisant pour commencer. Nous revenons vers vous sous 48h ouvrées.</p>
+
+      <div class="mt-9 space-y-5 text-sm">
+        <div class="flex items-start gap-3"><i class="ri-map-pin-2-line text-gold mt-0.5"></i><span>Cotonou, Bénin — déplacements possibles dans toute l'Afrique de l'Ouest</span></div>
+        <div class="flex items-start gap-3"><i class="ri-phone-line text-gold mt-0.5"></i><span>+229 01 00 00 00 00</span></div>
+        <div class="flex items-start gap-3"><i class="ri-mail-line text-gold mt-0.5"></i><span>bonjour@everafterevents.bj</span></div>
+      </div>
+
+      <div class="flex gap-4 mt-8">
+        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+        <a href="#" class="social-icon"><i class="ri-tiktok-line"></i></a>
+      </div>
+    </div>
+
+    <form id="contact-form" class="lg:col-span-3" data-aos="fade-left">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="form-label-light">Nom complet</label>
+          <input required type="text" name="name" class="input-dark" placeholder="Votre nom">
+        </div>
+        <div>
+          <label class="form-label-light">Téléphone</label>
+          <input required type="tel" name="phone" class="input-dark" placeholder="+229 ...">
+        </div>
+      </div>
+      <div class="mt-5">
+        <label class="form-label-light">Type de cérémonie</label>
+        <select name="type" class="input-dark">
+          <option>Mariage traditionnel</option>
+          <option>Mariage civil</option>
+          <option>Réception</option>
+          <option>Planification complète</option>
+        </select>
+      </div>
+      <div class="mt-5">
+        <label class="form-label-light">Votre message</label>
+        <textarea name="message" rows="4" required class="input-dark" placeholder="Date envisagée, nombre d'invités, ville..."></textarea>
+      </div>
+      <button type="submit" class="btn-gold mt-6 w-full sm:w-auto">Envoyer ma demande</button>
+      <p id="form-success" class="hidden mt-4 text-sm text-goldLight"><i class="ri-checkbox-circle-line mr-1"></i>Merci ! Votre message a bien été envoyé, nous revenons vers vous très vite.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-[#0A211B] text-sand/70 py-12">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="seal seal-sm text-gold"><svg viewBox="0 0 60 60" class="w-full h-full"><circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/></svg></span>
+      <span class="font-display text-ivory">Ever After Events</span>
+    </div>
+    <p class="text-xs text-center">© 2026 Ever After Events. Tous les serments méritent une mise en scène. — Projet réalisé par la team MSK.</p>
+    <a href="#hero" class="text-xs uppercase tracking-widest hover:text-gold transition-colors">Haut de page ↑</a>
+  </div>
+</footer>
+
+<!-- ================= FLOATING ACTIONS ================= -->
+<div class="fixed bottom-6 right-6 z-[70] flex flex-col items-end gap-3">
+  <div id="chat-panel" class="chat-panel hidden">
+    <div class="chat-header">
+      <span><i class="ri-question-answer-line mr-1"></i> Assistant Ever After</span>
+      <button id="chat-close" aria-label="Fermer"><i class="ri-close-line"></i></button>
+    </div>
+    <div id="chat-body" class="chat-body">
+      <div class="chat-msg bot">Bonjour ! Je peux répondre à quelques questions courantes (prix, délais, types de mariage...). Choisissez une question ou écrivez la vôtre.</div>
+    </div>
+    <div class="chat-quick" id="chat-quick">
+      <button data-q="prix">Combien ça coûte ?</button>
+      <button data-q="delai">Quel délai réserver ?</button>
+      <button data-q="tradi">Vous gérez la dot ?</button>
+      <button data-q="contact">Parler à une personne</button>
+    </div>
+    <form id="chat-form" class="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Écrivez votre question…" autocomplete="off">
+      <button type="submit" aria-label="Envoyer"><i class="ri-send-plane-fill"></i></button>
+    </form>
+  </div>
+
+  <button id="chat-toggle" class="fab fab-gold" aria-label="Ouvrir l'assistant"><i class="ri-message-3-line text-xl"></i></button>
+  <a href="https://wa.me/22900000000" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Contacter sur WhatsApp"><i class="ri-whatsapp-line text-2xl"></i></a>
+</div>
+
+<button id="back-to-top" aria-label="Retour en haut" class="fixed bottom-6 left-6 z-[70] fab fab-ghost opacity-0 pointer-events-none">
+  <i class="ri-arrow-up-line text-xl"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ever After Events — Organisation de mariages traditionnels, civils &amp; réceptions</title>
+<meta name="description" content="Ever After Events conçoit et orchestre vos mariages traditionnels, civils et réceptions avec exigence, élégance et sens du détail.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- RemixIcon -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Tailwind (CDN, no build step) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#4A1128',
+          ink2: '#5C1730',
+          gold: '#C9A24D',
+          goldLight: '#E4C87A',
+          ivory: '#FDF5F3',
+          wine: '#A32846',
+          sand: '#E8CFC9',
+          blush: '#F6DEE3',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          body: ['Work Sans', 'sans-serif'],
+          signature: ['Caveat', 'cursive'],
+        },
+      }
+    }
+  }
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body bg-ivory text-ink antialiased">
+
+<!-- ================= HEADER ================= -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between py-5">
+    <a href="#hero" class="flex items-center gap-3 group">
+      <span class="seal seal-sm shrink-0">
+        <svg viewBox="0 0 60 60" class="w-full h-full">
+          <circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/>
+          <text x="30" y="37" text-anchor="middle" font-family="Fraunces, serif" font-size="18" fill="currentColor">EAE</text>
+        </svg>
+      </span>
+      <span class="font-display text-lg md:text-xl tracking-wide leading-none header-brand">
+        Ever After <em class="not-italic text-gold">Events</em>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-9 header-nav">
+      <a href="#apropos" class="nav-link">À propos</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#devis" class="nav-link">Simulateur</a>
+      <a href="#galerie" class="nav-link">Galerie</a>
+      <a href="#avis" class="nav-link">Avis</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="btn-gold-outline">Nous contacter</a>
+    </nav>
+
+    <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false" class="lg:hidden relative z-50 w-9 h-9 flex flex-col justify-center items-center gap-[5px] header-nav">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-500 ease-in-out bg-ink">
+    <nav class="flex flex-col px-8 pb-8 pt-2 gap-1 font-display text-xl text-sand">
+      <a href="#apropos" class="mobile-link">À propos</a>
+      <a href="#services" class="mobile-link">Services</a>
+      <a href="#devis" class="mobile-link">Simulateur de devis</a>
+      <a href="#galerie" class="mobile-link">Galerie</a>
+      <a href="#avis" class="mobile-link">Avis clients</a>
+      <a href="#faq" class="mobile-link">FAQ</a>
+      <a href="#contact" class="mobile-link text-gold">Nous contacter →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="relative min-h-[100svh] flex items-end md:items-center overflow-hidden bg-ink">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1695281536457-01f9a07c575b?auto=format&fit=crop&w=1800&q=80"
+         alt="Couple de mariés s'enlaçant" class="w-full h-full object-cover object-[50%_20%]" />
+    <div class="absolute inset-0 hero-gradient"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 md:px-10 pb-16 pt-40 md:py-0 w-full">
+    <p data-aos="fade-up" class="font-signature text-3xl md:text-4xl text-gold mb-2">Le premier chapitre de votre "pour toujours"</p>
+    <h1 data-aos="fade-up" data-aos-delay="100" class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-ivory max-w-3xl">
+      Des cérémonies <em class="text-gold not-italic font-medium">scellées</em><br class="hidden md:block"> avec exigence, célébrées avec cœur.
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="mt-6 text-sand/90 max-w-xl text-base md:text-lg">
+      Ever After Events conçoit vos mariages traditionnels, civils et réceptions : du choix du protocole à la dernière danse, chaque détail est pensé, écrit et signé avec vous.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="300" class="mt-9 flex flex-wrap gap-4">
+      <a href="#contact" class="btn-gold">Planifier mon mariage</a>
+      <a href="#galerie" class="btn-ghost">Voir nos réalisations</a>
+    </div>
+  </div>
+
+  <a href="#apropos" class="hidden md:flex scroll-cue absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-sand/80">
+    <span class="text-xs tracking-[0.25em] uppercase">Découvrir</span>
+    <span class="w-px h-10 bg-sand/50 relative overflow-hidden"><span class="scroll-cue-line"></span></span>
+  </a>
+</section>
+
+<!-- ================= À PROPOS ================= -->
+<section id="apropos" class="py-24 md:py-32 bg-ivory">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-2 gap-14 md:gap-20 items-center">
+
+    <div data-aos="fade-right" class="relative">
+      <div class="relative rounded-[2px] overflow-hidden shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1661332517932-2d441bfb2994?auto=format&fit=crop&w=1000&q=80"
+             alt="Couple en tenue traditionnelle" class="w-full h-[420px] md:h-[520px] object-cover" />
+      </div>
+      <div class="absolute -bottom-8 -right-6 md:-right-10 bg-ink text-ivory rounded-[2px] shadow-xl px-7 py-6 w-52 md:w-60">
+        <span class="seal seal-sm text-gold mb-2 inline-block"><svg viewBox="0 0 60 60" class="w-full h-full"><circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/></svg></span>
+        <p class="font-display text-3xl text-gold leading-none counter" data-target="180">0</p>
+        <p class="text-xs tracking-wide text-sand/80 mt-1">unions célébrées &amp; signées</p>
+      </div>
+    </div>
+
+    <div data-aos="fade-left">
+      <p class="eyebrow">À propos d'Ever After Events</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3 leading-tight">
+        Nous ne planifions pas des évènements. <span class="text-wine italic">Nous mettons en scène des serments.</span>
+      </h2>
+      <p class="mt-6 text-ink/80 leading-relaxed">
+        Depuis nos débuts, notre agence accompagne les couples à travers les trois temps forts d'une union : la dot et les rites traditionnels, la signature à la mairie, puis la réception qui rassemble les deux familles. Nous connaissons les codes de chaque cérémonie — et surtout, nous savons les faire dialoguer entre eux sans rien perdre de leur sens.
+      </p>
+      <p class="mt-4 text-ink/80 leading-relaxed">
+        Notre équipe de coordinateurs, décorateurs et maîtres de cérémonie travaille en atelier avec vous, comme un tailleur reprend un patron : sur mesure, jamais sur catalogue.
+      </p>
+
+      <div class="grid grid-cols-3 gap-4 mt-10 border-t border-ink/10 pt-8">
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-wine counter" data-target="12">0</p>
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-wide">ans d'expérience</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-wine"><span class="counter" data-target="98">0</span>%</p>
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-wide">clients satisfaits</p>
+        </div>
+        <div>
+          <p class="font-display text-3xl md:text-4xl text-wine counter" data-target="40">0</p>
+          <p class="text-xs text-ink/60 mt-1 uppercase tracking-wide">partenaires &amp; prestataires</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><span class="seal seal-sm text-gold"><svg viewBox="0 0 60 60" class="w-full h-full"><circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/></svg></span></div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="py-24 md:py-32 bg-ink text-ivory relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 relative">
+    <div class="max-w-2xl mx-auto text-center" data-aos="fade-up">
+      <p class="eyebrow text-gold justify-center">Nos services</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Trois cérémonies, une seule promesse</h2>
+      <p class="mt-4 text-sand/80">Chaque type d'union a son protocole, sa symbolique et son tempo. Nous les orchestrons séparément — ou ensemble, sur un même week-end.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-16">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="ri-hand-heart-line"></i>
+        <h3>Mariage Traditionnel</h3>
+        <p>Dot, rites coutumiers, tenues et symboles honorés à la lettre — organisés avec les familles, dans le respect des usages de chaque région.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="ri-quill-pen-line"></i>
+        <h3>Mariage Civil</h3>
+        <p>De la constitution du dossier à la cérémonie à la mairie : coordination des témoins, du protocole officiel et du registre, sans stress le jour J.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="ri-goblet-line"></i>
+        <h3>Réception &amp; Autres célébrations</h3>
+        <p>Décoration, traiteur, animation, photo/vidéo : la fête qui suit les serments, pensée comme un spectacle vivant pour vos invités.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <i class="ri-route-line"></i>
+        <h3>Wedding Planning complet</h3>
+        <p>Un coordinateur unique du premier rendez-vous au dernier remerciement, pour les couples qui veulent tout confier en toute confiance.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="ri-palette-line"></i>
+        <h3>Décoration &amp; Scénographie</h3>
+        <p>Direction artistique sur mesure : palettes, textiles, fleurs et lumière assemblés pour raconter votre histoire en un coup d'œil.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="ri-camera-3-line"></i>
+        <h3>Photo &amp; Souvenirs</h3>
+        <p>Une équipe photo/vidéo qui capture aussi bien la gravité d'une signature que l'euphorie d'une piste de danse.</p>
+        <a href="#contact">En discuter <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SIMULATEUR DE DEVIS ================= -->
+<section id="devis" class="py-24 md:py-32 bg-ivory">
+  <div class="max-w-6xl mx-auto px-5 md:px-10">
+    <div class="max-w-2xl" data-aos="fade-up">
+      <p class="eyebrow">Simulateur</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Estimez le budget de votre grand jour</h2>
+      <p class="mt-4 text-ink/70">Ajustez les curseurs : nous vous donnons une fourchette indicative en quelques secondes. Un devis précis et personnalisé suit toujours un vrai échange avec notre équipe.</p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-5 gap-0 rounded-[2px] overflow-hidden shadow-2xl" data-aos="fade-up">
+      <!-- controls -->
+      <div class="lg:col-span-3 bg-white p-8 md:p-12">
+
+        <div class="mb-9">
+          <p class="form-label">Type de cérémonie</p>
+          <div class="grid grid-cols-3 gap-3" id="type-group">
+            <button type="button" class="type-btn active" data-value="1.0" data-label="Traditionnel">Traditionnel</button>
+            <button type="button" class="type-btn" data-value="0.85" data-label="Civil">Civil</button>
+            <button type="button" class="type-btn" data-value="1.2" data-label="Traditionnel + Réception">Complet</button>
+          </div>
+        </div>
+
+        <div class="mb-9">
+          <div class="flex justify-between items-baseline mb-2">
+            <p class="form-label !mb-0">Nombre d'invités</p>
+            <span class="font-display text-xl text-wine"><span id="guests-value">150</span> pers.</span>
+          </div>
+          <input type="range" id="guests" min="30" max="800" step="10" value="150" class="w-full range-gold">
+          <div class="flex justify-between text-xs text-ink/40 mt-1"><span>30</span><span>800</span></div>
+        </div>
+
+        <div class="mb-2">
+          <p class="form-label">Options incluses</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="option-check"><input type="checkbox" value="1800000" checked> <span>Décoration &amp; scénographie</span></label>
+            <label class="option-check"><input type="checkbox" value="2500000" checked> <span>Traiteur complet</span></label>
+            <label class="option-check"><input type="checkbox" value="900000"> <span>Photo &amp; vidéo</span></label>
+            <label class="option-check"><input type="checkbox" value="1100000"> <span>Animation / orchestre</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- result -->
+      <div class="lg:col-span-2 bg-ink text-ivory p-8 md:p-12 flex flex-col justify-center">
+        <p class="text-xs tracking-[0.25em] uppercase text-gold">Estimation indicative</p>
+        <p class="font-display text-3xl md:text-4xl mt-3 leading-tight">
+          <span id="price-low">—</span> <br class="sm:hidden">–<span id="price-high">—</span>
+        </p>
+        <p class="text-sand/70 text-sm mt-1">FCFA, hors imprévus &amp; taxes locales</p>
+        <div class="h-px bg-sand/20 my-6"></div>
+        <p class="text-sand/80 text-sm leading-relaxed">Cette fourchette évolue selon le nombre d'invités, le type de cérémonie et les options choisies. Recevez un devis détaillé et gratuit sous 48h.</p>
+        <a href="#contact" class="btn-gold mt-7 text-center">Demander mon devis précis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERIE ================= -->
+<section id="galerie" class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6" data-aos="fade-up">
+      <div class="max-w-xl">
+        <p class="eyebrow">Galerie</p>
+        <h2 class="font-display text-3xl md:text-4xl mt-3">Des cérémonies, en images</h2>
+      </div>
+      <div class="flex flex-wrap gap-2" id="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="tradi">Traditionnel</button>
+        <button class="filter-btn" data-filter="civil">Civil</button>
+        <button class="filter-btn" data-filter="autre">Réceptions</button>
+      </div>
+    </div>
+
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-12">
+      <div class="gallery-item" data-cat="tradi" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1618999114008-fbf937170cdb?auto=format&fit=crop&w=800&q=80" alt="Mariée en robe traditionnelle rouge et or">
+      </div>
+      <div class="gallery-item" data-cat="civil" data-aos="fade-up" data-aos-delay="50">
+        <img src="https://images.unsplash.com/photo-1507650029083-5092f9b2b2e6?auto=format&fit=crop&w=800&q=80" alt="Passage de l'alliance">
+      </div>
+      <div class="gallery-item" data-cat="autre" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1617813437449-c4f8f233dcd6?auto=format&fit=crop&w=800&q=80" alt="Décoration florale de réception">
+      </div>
+      <div class="gallery-item" data-cat="tradi" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1665258918932-9e358bcfba0f?auto=format&fit=crop&w=800&q=80" alt="Couple en tenue traditionnelle">
+      </div>
+      <div class="gallery-item" data-cat="civil" data-aos="fade-up" data-aos-delay="50">
+        <img src="https://images.unsplash.com/photo-1608009232260-9b527a5bb9bd?auto=format&fit=crop&w=800&q=80" alt="Mariage civil, costume et robe blanche">
+      </div>
+      <div class="gallery-item" data-cat="autre" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1705459965544-fcc7ead92d58?auto=format&fit=crop&w=800&q=80" alt="Arrivée des mariés en voiture">
+      </div>
+      <div class="gallery-item" data-cat="tradi" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1662432911640-9a7af63bbe4c?auto=format&fit=crop&w=800&q=80" alt="Tenue traditionnelle raffinée">
+      </div>
+      <div class="gallery-item" data-cat="civil" data-aos="fade-up" data-aos-delay="50">
+        <img src="https://images.unsplash.com/photo-1529519195486-16945f0fb37f?auto=format&fit=crop&w=800&q=80" alt="Couple se tenant la main">
+      </div>
+      <div class="gallery-item" data-cat="autre" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1633150747731-c945ec51b663?auto=format&fit=crop&w=800&q=80" alt="Séance photo de mariés">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[80] hidden items-center justify-center bg-ink/95 p-6">
+  <button id="lightbox-close" aria-label="Fermer" class="absolute top-6 right-6 text-ivory text-3xl leading-none"><i class="ri-close-line"></i></button>
+  <img id="lightbox-img" src="" alt="" class="max-h-[85vh] max-w-full object-contain rounded-[2px]">
+</div>
+
+<!-- ================= AVIS CLIENTS ================= -->
+<section id="avis" class="py-24 md:py-32 bg-ivory overflow-hidden">
+  <div class="max-w-4xl mx-auto px-5 md:px-10 text-center" data-aos="fade-up">
+    <p class="eyebrow justify-center">Avis clients</p>
+    <h2 class="font-display text-3xl md:text-4xl mt-3">Ce que disent nos couples</h2>
+  </div>
+
+  <div class="max-w-3xl mx-auto mt-14 px-5 relative" data-aos="fade-up">
+    <div id="testi-track" class="testi-track">
+
+      <article class="testi-card">
+        <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+        <p class="font-display text-xl md:text-2xl leading-snug text-ink/90">« Notre dot s'est déroulée exactement comme nos parents l'espéraient, et la réception qui a suivi ressemblait à nous. Ever After a tenu les deux mondes ensemble. »</p>
+        <p class="font-signature text-2xl text-wine mt-6">Chimène &amp; Ludovic</p>
+        <p class="text-xs text-ink/50 uppercase tracking-wide">Mariage traditionnel &amp; réception — Cotonou</p>
+      </article>
+
+      <article class="testi-card">
+        <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+        <p class="font-display text-xl md:text-2xl leading-snug text-ink/90">« La coordinatrice a géré les documents, les témoins, le timing à la mairie — nous n'avons eu qu'à signer et sourire. »</p>
+        <p class="font-signature text-2xl text-wine mt-6">Adjoa &amp; Steve</p>
+        <p class="text-xs text-ink/50 uppercase tracking-wide">Mariage civil — Porto-Novo</p>
+      </article>
+
+      <article class="testi-card">
+        <div class="stars"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+        <p class="font-display text-xl md:text-2xl leading-snug text-ink/90">« Le simulateur de devis nous a évité bien des surprises, et l'équipe a respecté le budget annoncé au FCFA près. »</p>
+        <p class="font-signature text-2xl text-wine mt-6">Rachida &amp; Emmanuel</p>
+        <p class="text-xs text-ink/50 uppercase tracking-wide">Réception — Abomey-Calavi</p>
+      </article>
+
+    </div>
+
+    <div class="flex items-center justify-center gap-6 mt-10">
+      <button id="testi-prev" class="testi-nav" aria-label="Avis précédent"><i class="ri-arrow-left-line"></i></button>
+      <div id="testi-dots" class="flex gap-2"></div>
+      <button id="testi-next" class="testi-nav" aria-label="Avis suivant"><i class="ri-arrow-right-line"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-24 md:py-32 bg-white">
+  <div class="max-w-3xl mx-auto px-5 md:px-10">
+    <div class="text-center" data-aos="fade-up">
+      <p class="eyebrow justify-center">Questions fréquentes</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Avant de nous écrire</h2>
+    </div>
+
+    <div class="mt-12 divide-y divide-ink/10 border-y border-ink/10" id="faq-list">
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Combien de temps avant la date faut-il vous contacter ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Idéalement 6 à 9 mois avant pour une cérémonie complète (traditionnel + civil + réception), et 2 mois minimum pour une prestation simple. Les dates de forte saison (décembre, juillet-août) partent vite.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Organisez-vous uniquement la dot ou uniquement le civil ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Oui, chaque cérémonie peut être réservée séparément. Beaucoup de couples nous confient d'abord la dot, puis reviennent pour la réception une fois rassurés.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Le simulateur de devis est-il un engagement ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Non, c'est une estimation indicative gratuite et sans engagement. Le devis final est établi après un échange avec votre coordinateur dédié.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Travaillez-vous avec nos propres prestataires (traiteur, DJ...) ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Tout à fait. Nous pouvons coordonner vos prestataires de confiance ou vous recommander ceux de notre réseau, selon vos préférences et votre budget.</p></div>
+      </div>
+      <div class="faq-item" data-aos="fade-up">
+        <button class="faq-q">Proposez-vous un jour de coordination seule, sans planification complète ?<i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Oui, notre formule "Jour J" prend le relais 48h avant l'événement pour que vous n'ayez plus rien à gérer vous-même le jour de la cérémonie.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-24 md:py-32 bg-ink text-ivory relative">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid lg:grid-cols-5 gap-14">
+
+    <div class="lg:col-span-2" data-aos="fade-right">
+      <p class="eyebrow text-gold">Contact</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-3">Racontez-nous votre histoire</h2>
+      <p class="mt-5 text-sand/80 leading-relaxed">Un mot, une date, une envie encore floue : c'est suffisant pour commencer. Nous revenons vers vous sous 48h ouvrées.</p>
+
+      <div class="mt-9 space-y-5 text-sm">
+        <div class="flex items-start gap-3"><i class="ri-map-pin-2-line text-gold mt-0.5"></i><span>Cotonou, Bénin — déplacements possibles dans toute l'Afrique de l'Ouest</span></div>
+        <div class="flex items-start gap-3"><i class="ri-phone-line text-gold mt-0.5"></i><span>+229 01 00 00 00 00</span></div>
+        <div class="flex items-start gap-3"><i class="ri-mail-line text-gold mt-0.5"></i><span>bonjour@everafterevents.bj</span></div>
+      </div>
+
+      <div class="flex gap-4 mt-8">
+        <a href="#" class="social-icon"><i class="ri-instagram-line"></i></a>
+        <a href="#" class="social-icon"><i class="ri-facebook-fill"></i></a>
+        <a href="#" class="social-icon"><i class="ri-tiktok-line"></i></a>
+      </div>
+    </div>
+
+    <form id="contact-form" class="lg:col-span-3" data-aos="fade-left">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label class="form-label-light">Nom complet</label>
+          <input required type="text" name="name" class="input-dark" placeholder="Votre nom">
+        </div>
+        <div>
+          <label class="form-label-light">Téléphone</label>
+          <input required type="tel" name="phone" class="input-dark" placeholder="+229 ...">
+        </div>
+      </div>
+      <div class="mt-5">
+        <label class="form-label-light">Type de cérémonie</label>
+        <select name="type" class="input-dark">
+          <option>Mariage traditionnel</option>
+          <option>Mariage civil</option>
+          <option>Réception</option>
+          <option>Planification complète</option>
+        </select>
+      </div>
+      <div class="mt-5">
+        <label class="form-label-light">Votre message</label>
+        <textarea name="message" rows="4" required class="input-dark" placeholder="Date envisagée, nombre d'invités, ville..."></textarea>
+      </div>
+      <button type="submit" class="btn-gold mt-6 w-full sm:w-auto">Envoyer ma demande</button>
+      <p id="form-success" class="hidden mt-4 text-sm text-goldLight"><i class="ri-checkbox-circle-line mr-1"></i>Merci ! Votre message a bien été envoyé, nous revenons vers vous très vite.</p>
+    </form>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-5 md:px-10 mt-16" data-aos="fade-up">
+    <div class="map-frame">
+      <iframe
+        title="Localisation d'Ever After Events à Cotonou"
+        src="https://maps.google.com/maps?q=Cotonou%2C%20B%C3%A9nin&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <p class="text-xs text-sand/60 mt-3 flex items-center gap-2"><i class="ri-map-pin-2-line text-gold"></i> Atelier Ever After Events — Cotonou, Bénin. Rendez-vous sur place uniquement sur réservation.</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-[#2A0A18] text-sand/70 py-12">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="seal seal-sm text-gold"><svg viewBox="0 0 60 60" class="w-full h-full"><circle cx="30" cy="30" r="27" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="30" r="21" fill="none" stroke="currentColor" stroke-width="0.7"/></svg></span>
+      <span class="font-display text-ivory">Ever After Events</span>
+    </div>
+    <p class="text-xs text-center">© 2026 Ever After Events. Tous les serments méritent une mise en scène. — Projet réalisé par la team MSK.</p>
+    <a href="#hero" class="text-xs uppercase tracking-widest hover:text-gold transition-colors">Haut de page ↑</a>
+  </div>
+</footer>
+
+<!-- ================= FLOATING ACTIONS ================= -->
+<div class="fixed bottom-6 right-6 z-[70] flex flex-col items-end gap-3">
+  <div id="chat-panel" class="chat-panel hidden">
+    <div class="chat-header">
+      <span><i class="ri-question-answer-line mr-1"></i> Assistant Ever After</span>
+      <button id="chat-close" aria-label="Fermer"><i class="ri-close-line"></i></button>
+    </div>
+    <div id="chat-body" class="chat-body">
+      <div class="chat-msg bot">Bonjour ! Je peux répondre à quelques questions courantes (prix, délais, types de mariage...). Choisissez une question ou écrivez la vôtre.</div>
+    </div>
+    <div class="chat-quick" id="chat-quick">
+      <button data-q="prix">Combien ça coûte ?</button>
+      <button data-q="delai">Quel délai réserver ?</button>
+      <button data-q="tradi">Vous gérez la dot ?</button>
+      <button data-q="contact">Parler à une personne</button>
+    </div>
+    <form id="chat-form" class="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Écrivez votre question…" autocomplete="off">
+      <button type="submit" aria-label="Envoyer"><i class="ri-send-plane-fill"></i></button>
+    </form>
+  </div>
+
+  <button id="chat-toggle" class="fab fab-gold" aria-label="Ouvrir l'assistant"><i class="ri-message-3-line text-xl"></i></button>
+  <a href="https://wa.me/22900000000" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Contacter sur WhatsApp"><i class="ri-whatsapp-line text-2xl"></i></a>
+</div>
+
+<button id="back-to-top" aria-label="Retour en haut" class="fixed bottom-6 left-6 z-[70] fab fab-ghost opacity-0 pointer-events-none">
+  <i class="ri-arrow-up-line text-xl"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
