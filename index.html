@@ -483,28 +483,35 @@
 
 <!-- ================= FLOATING ACTIONS ================= -->
 <div class="fixed bottom-6 right-6 z-[70] flex flex-col items-end gap-3">
-  <div id="chat-panel" class="chat-panel hidden">
-    <div class="chat-header">
-      <span><i class="ri-question-answer-line mr-1"></i> Assistant Ever After</span>
-      <button id="chat-close" aria-label="Fermer"><i class="ri-close-line"></i></button>
-    </div>
-    <div id="chat-body" class="chat-body">
-      <div class="chat-msg bot">Bonjour ! Je peux répondre à quelques questions courantes (prix, délais, types de mariage...). Choisissez une question ou écrivez la vôtre.</div>
-    </div>
-    <div class="chat-quick" id="chat-quick">
-      <button data-q="prix">Combien ça coûte ?</button>
-      <button data-q="delai">Quel délai réserver ?</button>
-      <button data-q="tradi">Vous gérez la dot ?</button>
-      <button data-q="contact">Parler à une personne</button>
-    </div>
-    <form id="chat-form" class="chat-input-row">
-      <input id="chat-input" type="text" placeholder="Écrivez votre question…" autocomplete="off">
-      <button type="submit" aria-label="Envoyer"><i class="ri-send-plane-fill"></i></button>
-    </form>
-  </div>
+    <!-- Le bouton pour ouvrir le Chat (remplace ton ancien bouton "Asiat") -->
+    <button id="chatToggleBtn" class="chat-btn">💬 Chat</button>
 
-  <button id="chat-toggle" class="fab fab-gold" aria-label="Ouvrir l'assistant"><i class="ri-message-3-line text-xl"></i></button>
-  <a href="https://wa.me/22900000000" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Contacter sur WhatsApp"><i class="ri-whatsapp-line text-2xl"></i></a>
+    <!-- La fenêtre de conversation -->
+    <div id="chatWindow" class="chat-window hidden">
+      <div class="chat-header">
+        <span>Assistant</span>
+        <button id="closeChatBtn" class="close-btn">&times;</button>
+      </div>
+
+      <div id="chatMessages" class="chat-messages">
+        <!-- Message par défaut du bot -->
+        <div class="message bot">
+          Bonjour ! Comment puis-je vous aider aujourd'hui ?
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-input-area">
+        <input
+          type="text"
+          id="chatInput"
+          placeholder="Posez votre question..."
+          autocomplete="off"
+        />
+        <button id="sendBtn" class="send-btn">Envoyer</button>
+      </form>
+    </div>
+
+    <a href="https://wa.me/22900000000" target="_blank" rel="noopener" class="fab fab-whatsapp" aria-label="Contacter sur WhatsApp"><i class="ri-whatsapp-line text-2xl"></i></a>
 </div>
 
 <button id="back-to-top" aria-label="Retour en haut" class="fixed bottom-6 left-6 z-[70] fab fab-ghost opacity-0 pointer-events-none">

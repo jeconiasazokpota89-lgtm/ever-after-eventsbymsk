@@ -204,75 +204,110 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ============ Mini FAQ chatbot (rule-based, no external API) ============ */
-  const chatToggle = document.getElementById('chat-toggle');
-  const chatPanel = document.getElementById('chat-panel');
-  const chatClose = document.getElementById('chat-close');
-  const chatBody = document.getElementById('chat-body');
+  const chatToggle = document.getElementById('chatToggleBtn');
+  const chatPanel = document.getElementById('chatWindow');
+  const chatClose = document.getElementById('closeChatBtn');
+  const chatBody = document.getElementById('chatMessages');
   const chatForm = document.getElementById('chat-form');
-  const chatInput = document.getElementById('chat-input');
-  const chatQuick = document.getElementById('chat-quick');
+  const chatInput = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('sendBtn');
 
-  const responses = {
-    prix: "Le budget dépend surtout du nombre d'invités et du type de cérémonie. Essayez notre simulateur de devis juste au-dessus de la galerie pour une estimation immédiate en FCFA.",
-    delai: "Nous recommandons de nous contacter 6 à 9 mois avant pour une organisation complète, et au moins 2 mois avant pour une prestation simple.",
-    tradi: "Oui, la dot et les rites coutumiers font partie de notre cœur de métier : coordination avec les deux familles, protocole, tenues et symboles respectés.",
-    contact: "Bien sûr ! Remplissez le formulaire dans la section Contact ou écrivez-nous directement sur WhatsApp via le bouton vert ci-dessous.",
-    civil: "Nous accompagnons aussi les mariages civils : constitution du dossier, témoins, timing à la mairie et registre — sans stress le jour J.",
-    default: "Je peux répondre aux questions sur les prix, les délais, la dot ou le mariage civil. Pour tout le reste, le plus simple est de nous écrire via le formulaire de contact ou WhatsApp."
-  };
+  // Ouvre ou ferme la fenêtre de chat
+  chatToggle?.addEventListener('click', () => {
+    chatPanel?.classList.remove('hidden');
+    chatToggle.style.display = 'none';
+  });
 
-  function addMessage(text, who) {
-    const msg = document.createElement('div');
-    msg.className = 'chat-msg ' + who;
-    msg.textContent = text;
-    chatBody.appendChild(msg);
+  chatClose?.addEventListener('click', () => {
+    chatPanel?.classList.add('hidden');
+    chatToggle.style.display = 'block';
+  });
+
+  function addMessage(text, sender, id = null) {
+    if (!text.trim()) return;
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', sender);
+    if (id) messageDiv.id = id;
+    messageDiv.textContent = text;
+    chatBody.appendChild(messageDiv);
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  function botReply(key) {
-    setTimeout(() => addMessage(responses[key] || responses.default, 'bot'), 350);
+  async function getAiResponse(userMessage) {
+    const apiKey = "YOUR_API_KEY_HERE"; // à configurer séparément, ne jamais commit la vraie clé
+const url = "https://api.groq.com/openai/v1/chat/completions";
+    const systemPrompt = `Tu es l'assistant virtuel de 'Ever After Events', une agence d'organisation de mariages de luxe. 
+        Ton rôle est de répondre aux questions des clients sur nos services, de manière professionnelle, chaleureuse et concise.
+        RÈGLE STRICTE : Si la question de l'utilisateur n'a absolument AUCUN rapport avec l'organisation de mariage, l'événementiel, ou notre agence, tu dois poliment lui rappeler que tu es l'assistant d'une agence de mariage et lui demander comment tu peux l'aider à planifier son événement. Ne réponds pas aux requêtes hors sujet.`;
+
+    const payload = {
+      model: "llama-3.3-70b-versatile",
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userMessage }
+      ],
+      temperature: 0.7,
+      max_tokens: 500
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${apiKey}`
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        console.error(`Erreur HTTP: ${response.status}`);
+        return "Désolé, je rencontre des difficultés techniques. Veuillez réessayer plus tard.";
+      }
+
+      const data = await response.json();
+      return data.choices?.[0]?.message?.content || "Désolé, je n'ai pas pu générer de réponse.";
+    } catch (error) {
+      console.error("Erreur API:", error);
+      return "Erreur de connexion. Vérifiez votre réseau.";
+    }
   }
 
-  function matchKeyword(text) {
-    const t = text.toLowerCase();
-    if (/(prix|coût|cout|budget|tarif|combien)/.test(t)) return 'prix';
-    if (/(délai|delai|temps|quand|avance)/.test(t)) return 'delai';
-    if (/(dot|tradi|coutum)/.test(t)) return 'tradi';
-    if (/(civil|mairie|registre)/.test(t)) return 'civil';
-    if (/(contact|parler|humain|personne|whatsapp|appel)/.test(t)) return 'contact';
-    return 'default';
-  }
+  async function handleSend() {
+    const userText = chatInput.value;
+    if (userText.trim() === '') return;
 
-  chatToggle.addEventListener('click', () => {
-    chatPanel.classList.toggle('hidden');
-  });
-  chatClose.addEventListener('click', () => chatPanel.classList.add('hidden'));
-
-  chatQuick.addEventListener('click', (e) => {
-    const btn = e.target.closest('button[data-q]');
-    if (!btn) return;
-    addMessage(btn.textContent, 'user');
-    botReply(btn.dataset.q);
-  });
-
-  chatForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const value = chatInput.value.trim();
-    if (!value) return;
-    addMessage(value, 'user');
-    botReply(matchKeyword(value));
+    addMessage(userText, 'user');
     chatInput.value = '';
+
+    const loadingId = 'loading-' + Date.now();
+    addMessage("Rédaction en cours...", 'bot', loadingId);
+
+    const aiResponse = await getAiResponse(userText);
+
+    const loadingMsg = document.getElementById(loadingId);
+    if (loadingMsg) loadingMsg.remove();
+    addMessage(aiResponse, 'bot');
+  }
+
+  chatForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleSend();
+  });
+
+  sendBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    handleSend();
+  });
+
+  chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSend();
+    }
   });
 
 });
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ============ AOS ============ */
-  if (window.AOS) {
-    AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
-  }
-
-  /* ============ Header scroll state ============ */
   const header = document.getElementById('site-header');
   const onScroll = () => {
     if (window.scrollY > 40) header.classList.add('scrolled');
@@ -469,66 +504,3 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.reset();
     setTimeout(() => formSuccess.classList.add('hidden'), 6000);
   });
-
-  /* ============ Mini FAQ chatbot (rule-based, no external API) ============ */
-  const chatToggle = document.getElementById('chat-toggle');
-  const chatPanel = document.getElementById('chat-panel');
-  const chatClose = document.getElementById('chat-close');
-  const chatBody = document.getElementById('chat-body');
-  const chatForm = document.getElementById('chat-form');
-  const chatInput = document.getElementById('chat-input');
-  const chatQuick = document.getElementById('chat-quick');
-
-  const responses = {
-    prix: "Le budget dépend surtout du nombre d'invités et du type de cérémonie. Essayez notre simulateur de devis juste au-dessus de la galerie pour une estimation immédiate en FCFA.",
-    delai: "Nous recommandons de nous contacter 6 à 9 mois avant pour une organisation complète, et au moins 2 mois avant pour une prestation simple.",
-    tradi: "Oui, la dot et les rites coutumiers font partie de notre cœur de métier : coordination avec les deux familles, protocole, tenues et symboles respectés.",
-    contact: "Bien sûr ! Remplissez le formulaire dans la section Contact ou écrivez-nous directement sur WhatsApp via le bouton vert ci-dessous.",
-    civil: "Nous accompagnons aussi les mariages civils : constitution du dossier, témoins, timing à la mairie et registre — sans stress le jour J.",
-    default: "Je peux répondre aux questions sur les prix, les délais, la dot ou le mariage civil. Pour tout le reste, le plus simple est de nous écrire via le formulaire de contact ou WhatsApp."
-  };
-
-  function addMessage(text, who) {
-    const msg = document.createElement('div');
-    msg.className = 'chat-msg ' + who;
-    msg.textContent = text;
-    chatBody.appendChild(msg);
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
-
-  function botReply(key) {
-    setTimeout(() => addMessage(responses[key] || responses.default, 'bot'), 350);
-  }
-
-  function matchKeyword(text) {
-    const t = text.toLowerCase();
-    if (/(prix|coût|cout|budget|tarif|combien)/.test(t)) return 'prix';
-    if (/(délai|delai|temps|quand|avance)/.test(t)) return 'delai';
-    if (/(dot|tradi|coutum)/.test(t)) return 'tradi';
-    if (/(civil|mairie|registre)/.test(t)) return 'civil';
-    if (/(contact|parler|humain|personne|whatsapp|appel)/.test(t)) return 'contact';
-    return 'default';
-  }
-
-  chatToggle.addEventListener('click', () => {
-    chatPanel.classList.toggle('hidden');
-  });
-  chatClose.addEventListener('click', () => chatPanel.classList.add('hidden'));
-
-  chatQuick.addEventListener('click', (e) => {
-    const btn = e.target.closest('button[data-q]');
-    if (!btn) return;
-    addMessage(btn.textContent, 'user');
-    botReply(btn.dataset.q);
-  });
-
-  chatForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const value = chatInput.value.trim();
-    if (!value) return;
-    addMessage(value, 'user');
-    botReply(matchKeyword(value));
-    chatInput.value = '';
-  });
-
-});
