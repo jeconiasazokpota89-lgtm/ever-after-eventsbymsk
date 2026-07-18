@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const BASE_PER_GUEST = 22000; // FCFA per guest, base cost (venue, staff, coordination)
 
   function formatFCFA(n) {
-    return Math.round(n / 1000) * 1000 + ' F';
+    return Math.round(n / 1000) * 100 + ' F';
   }
 
   function computeQuote() {
