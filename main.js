@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function getAiResponse(userMessage) {
-    const apiKey = "YOUR_API_KEY_HERE"; // à configurer séparément, ne jamais commit la vraie clé
+    const apiKey = "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"; // à configurer séparément, ne jamais commit la vraie clé
 const url = "https://api.groq.com/openai/v1/chat/completions";
     const systemPrompt = `Tu es l'assistant virtuel de 'Ever After Events', une agence d'organisation de mariages de luxe. 
         Ton rôle est de répondre aux questions des clients sur nos services, de manière professionnelle, chaleureuse et concise.
@@ -332,6 +332,7 @@ const url = "https://api.groq.com/openai/v1/chat/completions";
   const mobileMenu = document.getElementById('mobile-menu');
   burger.addEventListener('click', () => {
     const isOpen = burger.classList.toggle('open');
+    console.log(isOpen);
     burger.setAttribute('aria-expanded', String(isOpen));
     if (isOpen) {
       mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
