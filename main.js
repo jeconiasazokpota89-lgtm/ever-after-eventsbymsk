@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function getAiResponse(userMessage) {
-    const apiKey = "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"; // à configurer séparément, ne jamais commit la vraie clé
+    const apiKey = "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"; // à configurer séparément, ne jamais commit la vraie clé
 const url = "https://api.groq.com/openai/v1/chat/completions";
     const systemPrompt = `Tu es l'assistant virtuel de 'Ever After Events', une agence d'organisation de mariages de luxe. 
         Ton rôle est de répondre aux questions des clients sur nos services, de manière professionnelle, chaleureuse et concise.
